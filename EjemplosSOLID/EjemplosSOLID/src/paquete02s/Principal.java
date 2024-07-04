@@ -10,8 +10,15 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Persona persona1 = new Persona("René", 39);
-        Persona persona2 = new Persona("Santiango", 20);
+        
+        Ciudad c1 = new Ciudad();
+        c1.establecerNombre("Loja");
+        
+        Ciudad c2 = new Ciudad();
+        c2.establecerNombre("Cuenca");
+        
+        Persona persona1 = new Persona("René", 39, c1);
+        Persona persona2 = new Persona("Santiango", 20, c2);
         
         OperacionesEstudiantes op1 = new OperacionesEstudiantes();
         ArrayList<Persona> miLista = new ArrayList<>();
@@ -19,7 +26,10 @@ public class Principal {
         miLista.add(persona2);
         op1.establecerEstudiante(miLista);
         op1.establecerPromedioEdades();
+        op1.establecerEdadesMinima();
+        op1.establecerEdadesMaxima();
+        op1.establecerListaCiudadEstudiantes();
         
-        System.out.printf("%.2f\n", op1.obtenerPromedioEdades());
+        System.out.printf("%s\n", op1);
     }
 }

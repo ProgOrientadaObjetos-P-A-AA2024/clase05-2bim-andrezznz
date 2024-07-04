@@ -37,10 +37,64 @@ public class OperacionesEstudiantes {
         promedioEdades = suma/obtenerEstudiante().size();
     }
     
+    public void establecerEdadesMinima(){
+        edadminima = 100;
+        for (int i = 0; i < estudiantes.size(); i++) {
+            if (estudiantes.get(i).obtenerEdad() < edadminima) {
+                edadminima = estudiantes.get(i).obtenerEdad();
+            }
+        }
+    }
+    
+    public void establecerEdadesMaxima(){
+        edadmaxima = 100;
+        for (int i = 0; i < estudiantes.size(); i++) {
+            if (estudiantes.get(i).obtenerEdad() > edadminima) {
+                edadminima = estudiantes.get(i).obtenerEdad();
+            }
+        }
+    }
+    
+    public void establecerListaCiudadEstudiantes() {
+        
+        String cadena = " ";
+        
+        for (int i = 0; i < estudiantes.size(); i++) {
+            cadena = String.format("%s%s\n", cadena, 
+                    estudiantes.get(i).obtenerCiudad().obtenerNombre());
+        }
+        listaCiudadesEstudiantes = cadena;
+    }
+    
     public double obtenerPromedioEdades(){
         
         return promedioEdades;
     }
     
+    public int obtenerEdadMaxima() {
+        return edadmaxima;
+    }
     
-}
+    public int obtenerEdadMinima() {
+        return edadminima;
+    }
+    
+    public String obtenerListaCiudadEstudiantes() {
+        return listaCiudadesEstudiantes;
+    }
+    
+    @Override
+    public String toString() {
+        
+        String cadena = String.format("Promedio Edades: %.2f\n"
+                + "Edad Minina: %d\n"
+                + "Edad Maxima: %d\n"
+                + "Lista Ciudades Estudiantes:\n%s\n",
+                promedioEdades,
+                edadminima,
+                edadmaxima, 
+                listaCiudadesEstudiantes);
+        
+        return cadena;
+    }
+} 
