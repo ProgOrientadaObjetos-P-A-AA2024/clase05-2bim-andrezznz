@@ -9,7 +9,7 @@ package paquete08i;
  *
  * @author reroes
  */
-public class EvaluacionEnsayo implements EvaluacionTipoDos {
+public class EvaluacionEnsayo implements EvaluacionTipoDos { // implentando
 
     private int numeroProblemas;
     private double totalProblemas;
@@ -39,6 +39,11 @@ public class EvaluacionEnsayo implements EvaluacionTipoDos {
         promedioEnsayo = obtenerTotalProblemas() / obtenerNumeroProblemas();
 
     }
+    
+    /*
+    se utiliza el metodo "establecerPromedioEnsayo()" obligatoriamente ya que
+    se esta implentando "implemets" desde una interfaz "EvaluacionTipoDos"
+    */
 
     @Override
     public double obtenerPromedioEnsayo() {

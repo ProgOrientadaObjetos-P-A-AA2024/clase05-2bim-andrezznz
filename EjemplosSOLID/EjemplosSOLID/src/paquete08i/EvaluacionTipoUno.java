@@ -11,6 +11,6 @@ package paquete08i;
  */
 public interface EvaluacionTipoUno {
     
-    public void establecerPromedioObjetivas();
+    public void establecerPromedioObjetivas(); // listar - declarar
     public double obtenerPromedioObjetivas();
 }
